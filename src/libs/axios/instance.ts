@@ -1,12 +1,8 @@
 import environment from "@/config/environment";
+import { ISessionExtended } from "@/types/Auth";
 import axios from "axios";
-import { Session } from "next-auth";
 import { getSession } from "next-auth/react";
 
-// Extends Session milik nextauth
-interface CustomSession extends Session {
-    accessToken?: string;
-}
 
 const headers = {
     "Content-Type": "application/json",
@@ -25,7 +21,7 @@ const instance = axios.create({
 instance.interceptors.request.use(
     async (request) => {
         // Apabila ada Session dan pada session tersebut terdapat akses token maka set header Authorization
-        const session: CustomSession | null = await getSession();
+        const session: ISessionExtended | null = await getSession();
         if (session && session.accessToken) {
             request.headers.Authorization = `Bearer ${session.accessToken}`;
         }
