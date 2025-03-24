@@ -13,8 +13,15 @@ export async function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
     if (pathname === "/auth/login" || pathname === "/auth/register") {
-        if (token) {
-            return NextResponse.redirect(new URL("/", request.url));
+        // if (token) {
+        //     return NextResponse.redirect(new URL("/", request.url));
+        // }
+        
+        if (token && token?.user?.role == "admin"){
+            return NextResponse.redirect(new URL("/admin/dashboard", request.url));
+        }
+        if (token && token?.user?.role == "member"){
+            return NextResponse.redirect(new URL("/member/dashboard", request.url));
         }
     }
 

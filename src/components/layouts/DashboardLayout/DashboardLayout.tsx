@@ -37,7 +37,7 @@ const DashboardLayout = (props: PropTypes) => {
                         </h1>
                         <NavbarMenuToggle
                             aria-label={open ? "Close Menu" : "Open Menu"}
-                            onClick={() => setOpen(!open)}
+                            onPress={() => setOpen(!open)}
                             className="lg:hidden"
                         />
                     </Navbar>

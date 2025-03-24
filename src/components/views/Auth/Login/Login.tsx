@@ -82,17 +82,17 @@ const Login = () => {
                                     isInvalid={errors.password !== undefined}
                                     errorMessage={errors.password?.message}
                                     endContent={
-                                        <button 
+                                        <Button 
                                             className="focus:outline-none"
                                             type="button"
-                                            onClick={toggleVisibility}
+                                            onPress={toggleVisibility}
                                         >
                                             {isVisible ? (
                                                 <FaEye className="text-xl pointer-events-none text-default-400"/>
                                             ): (
                                                 <FaEyeSlash className="text-xl pointer-events-none text-default-400"/>
                                             )}
-                                        </button>
+                                        </Button>
                                     }
                                 />
                             )}

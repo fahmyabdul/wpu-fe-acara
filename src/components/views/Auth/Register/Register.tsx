@@ -132,17 +132,17 @@ const Register = () => {
                                     isInvalid={errors.confirmPassword !== undefined}
                                     errorMessage={errors.confirmPassword?.message}
                                     endContent={
-                                        <button 
+                                        <Button 
                                             className="focus:outline-none"
                                             type="button"
-                                            onClick={() => handleVisiblePassword("confirmPassword")}
+                                            onPress={() => handleVisiblePassword("confirmPassword")}
                                         >
                                             {visiblePassword.confirmPassword ? (
                                                 <FaEye className="text-xl pointer-events-none text-default-400"/>
                                             ): (
                                                 <FaEyeSlash className="text-xl pointer-events-none text-default-400"/>
                                             )}
-                                        </button>
+                                        </Button>
                                     }
                                 />
                             )}
