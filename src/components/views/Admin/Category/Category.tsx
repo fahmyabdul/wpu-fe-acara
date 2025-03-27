@@ -3,7 +3,7 @@ import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { Key, ReactNode, useCallback } from "react";
-import { CiMenuKebab } from "react-icons/ci";
+import { CiCirclePlus, CiMenuKebab } from "react-icons/ci";
 import { COLUMN_LISTS_CATEGORY } from "./Category.constants";
 import { LIMIT_LISTS } from "@/constants/list.constants";
 
@@ -62,7 +62,9 @@ const Category = () => {
                     }
                 ]}
                 emptyContent="Category is empty"
-                buttonTopContentLabel="Create Category"
+                buttonTopContentLabel={
+                    <><CiCirclePlus size={20}/>Category</>
+                }
                 onChangeSearch={() => {}}
                 onClearSearch={() => {}}
                 onClickButtonTopContent={() => {}}

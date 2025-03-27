@@ -10,7 +10,7 @@ interface PropTypes {
     data: Record<string, unknown>[];
     currentPage: number;
     totalPages: number;
-    buttonTopContentLabel?: string;
+    buttonTopContentLabel?: ReactNode;
     onChangeSearch: (e: ChangeEvent<HTMLInputElement>) => void;
     onClearSearch: () => void;
     onClickButtonTopContent?: () => void;
